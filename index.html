@@ -5,90 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【トモヒガラ】公式サイト</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#hero"><img src="images/logo.png" alt="トモヒガラ ロゴ"></a>
+            </div>
+            <div class="social-links">
+                <a href="https://x.com/IeiIei120709" target="_blank" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@%E3%83%88%E3%83%A2%E3%83%92%E3%82%AC%E3%83%A9LV1%E3%81%AE%E3%83%A9%E3%82%B9%E3%83%9C%E3%82%B9" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </nav>
+    </header>
+
     <section id="hero">
         <div class="hero-content">
-            <h1>【トモヒガラ】</h1>
-            <p>ここにゲームのキャッチコピーや簡単な説明文を書きます。</p>
+            <p>1手の重みが、あなたを閉じ込める<br>一つ一つの順序や取捨選択が大きな影響を持つ、高難易度脱出ゲーム</p>
             <a href="【SteamやストアのURL】" class="cta-button">ストアで見る</a>
         </div>
     </section>
 
     <main>
         <section id="about" class="content-section">
-    <h2>このゲームについて</h2>
+            <h2>このゲームについて</h2>
+            <p class="intro">記憶喪失の少女「イーリャ」を操作し、奇妙で複雑な建物からの脱出を目指す高難易度の脱出ゲームです。</p>
+            <div class="features-container">
+                <div class="feature-item"><h4>Stepシステムによる時間の経過</h4><p>行動ごとに「step」が進み、状況が変化します。例えば「押してから10stepだけ開く扉」をくぐり、先で作業をして戻ってくるには、行動の順序と取捨選択が命運を分けます。</p></div>
+                <div class="feature-item"><h4>重量システムによるアイテムの制限</h4><p>アイテムには「重量値」があり、所持重量が重いほど1回の行動にかかるstep数が増加します。軽装なら10回動ける場面でも、重量が大きければ5回しか動けないかもしれません。</p></div>
+            </div>
+            <div class="goal-description"><h4>明確なゴール</h4><p>外へと続く扉を開くため、鍵を集めることが目的です。</p><ul><li><strong>Demo版：</strong>チュートリアルにあたり、黒色の鍵を1つ集めれば脱出できます。</li><li><strong>製品版：</strong>5つの鍵が必要となり、複雑な仕掛けを解き進める必要があります。ただし救済措置として、“ロボットを分解して鍵を得る”方法も存在します。これは便利な近道であると同時に、本作の持つ残酷さを象徴する要素です。</li></ul></div>
+            <div class="streaming-policy"><h4>ゲーム配信について</h4><p>Demo版・製品版ともに配信可能です。配信の際は、概要欄などに本ゲームの販売リンクを掲載していただけると幸いです。</p></div>
+            <p class="outro">記憶喪失の少女「イーリャ」を奇妙で複雑な建物からの脱出へと導いてください。</p>
+        </section>
 
-    <p class="intro">
-        記憶喪失の少女「イーリャ」を操作し、奇妙で複雑な建物からの脱出を目指す高難易度の脱出ゲームです。
-    </p>
+<section id="media" class="content-section">
+    <h2>トレーラー & スクリーンショット</h2>
 
-    <div class="features-container">
-        <div class="feature-item">
-            <h4>Stepシステムによる時間の経過</h4>
-            <p>
-                行動ごとに「step」が進み、状況が変化します。例えば「押してから10stepだけ開く扉」をくぐり、先で作業をして戻ってくるには、行動の順序と取捨選択が命運を分けます。
-            </p>
+    <div class="trailer-container">
+        <iframe src="https://www.youtube.com/embed/xYiSZO9I0Ng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="gallery-container">
+        <div class="main-image-wrapper">
+            <img id="main-screenshot" src="images/ss1.jpg" alt="メインスクリーンショット">
         </div>
-        <div class="feature-item">
-            <h4>重量システムによるアイテムの制限</h4>
-            <p>
-                アイテムには「重量値」があり、所持重量が重いほど1回の行動にかかるstep数が増加します。軽装なら10回動ける場面でも、重量が大きければ5回しか動けないかもしれません。
-            </p>
+        <div class="thumbnail-grid">
+            <img class="thumbnail-img active" src="images/ss1.jpg" alt="スクリーンショット1">
+            <img class="thumbnail-img" src="images/ss2.jpg" alt="スクリーンショット2">
+            <img class="thumbnail-img" src="images/ss3.jpg" alt="スクリーンショット3">
+            <img class="thumbnail-img" src="images/ss4.jpg" alt="スクリーンショット4">
+            <img class="thumbnail-img" src="images/ss5.jpg" alt="スクリーンショット5">
         </div>
     </div>
-
-    <div class="goal-description">
-        <h4>明確なゴール</h4>
-        <p>外へと続く扉を開くため、鍵を集めることが目的です。</p>
-        <ul>
-            <li><strong>Demo版：</strong>チュートリアルにあたり、黒色の鍵を1つ集めれば脱出できます。</li>
-            <li><strong>製品版：</strong>5つの鍵が必要となり、複雑な仕掛けを解き進める必要があります。ただし救済措置として、“ロボットを分解して鍵を得る”方法も存在します。これは便利な近道であると同時に、本作の持つ残酷さを象徴する要素です。</li>
-        </ul>
-    </div>
-
-    <div class="streaming-policy">
-        <h4>ゲーム配信について</h4>
-        <p>
-            Demo版・製品版ともに配信可能です。配信の際は、概要欄などに本ゲームの販売リンクを掲載していただけると幸いです。
-        </p>
-    </div>
-
-    <p class="outro">
-        記憶喪失の少女「イーリャ」を奇妙で複雑な建物からの脱出へと導いてください。
-    </p>
-
 </section>
 
         <section id="characters" class="content-section">
             <h2>登場人物</h2>
             <div class="character-grid">
-                <div class="character-card">
-                    <img src="images/character1.png" alt="キャラクター1の画像">
-                    <h3>イーリャ</h3>
-                    <p>見知らぬ建物で目覚めた記憶喪失の少女。黒い鍵を見つけて脱出を目指す。</p>
-                </div>
-                <div class="character-card">
-                    <img src="images/character2.png" alt="キャラクター2の画像">
-                    <h3>モップ</h3>
-                    <p>イーリャをサポートするロボット。この建物について何か知っているようだが………</p>
-                </div>
+                <div class="character-card"><img src="images/character1.png" alt="イーリャの画像"><h3>イーリャ</h3><p>見知らぬ建物で目覚めた記憶喪失の少女。<br>黒い鍵を見つけて脱出を目指す。</p></div>
+                <div class="character-card"><img src="images/character2.png" alt="モップの画像"><h3>モップ</h3><p>イーリャをサポートするロボット。<br>この建物について何か知っているようだが………</p></div>
             </div>
         </section>
 
         <section id="specs" class="content-section">
             <h2>動作環境</h2>
-            <ul>
-                <li><strong>OS:</strong> Windows 10 / 11</li>
-                <li><strong>プロセッサー:</strong> Intel Core i5 以上</li>
-                <li><strong>メモリ:</strong> 8 GB RAM</li>
-            </ul>
+            <ul><li><strong>OS:</strong> Windows 10 / 11</li><li><strong>プロセッサー:</strong> Intel Core i5 以上</li><li><strong>メモリ:</strong> 8 GB RAM</li></ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 LV1のラスボス</p>
+        <div class="social-links-footer">
+            <a href="https://x.com/IeiIei120709" target="_blank" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@%E3%83%88%E3%83%A2%E3%83%92%E3%82%AC%E3%83%A9LV1%E3%81%AE%E3%83%A9%E3%82%B9%E3%83%9C%E3%82%B9" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <p>&copy; LV1のラスボス</p>
     </footer>
 
     <script src="js/script.js"></script>

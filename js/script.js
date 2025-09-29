@@ -24,3 +24,34 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 });
+
+/* ===============================================
+   スクリーンショットギャラリーの機能
+   =============================================== */
+// DOMContentLoaded はHTMLの読み込みが終わったら実行されるおまじない
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ギャラリー機能が必要なページでのみ実行
+    const mainImage = document.getElementById('main-screenshot');
+    const thumbnails = document.querySelectorAll('.thumbnail-img');
+
+    if (mainImage && thumbnails.length > 0) {
+        
+        thumbnails.forEach(thumbnail => {
+            // 各サムネイルにクリックイベントを追加
+            thumbnail.addEventListener('click', () => {
+                // 1. クリックされたサムネイルの画像パスを取得
+                const newImageSrc = thumbnail.getAttribute('src');
+                
+                // 2. 大きい画像の表示を更新
+                mainImage.setAttribute('src', newImageSrc);
+
+                // 3. 全てのサムネイルから 'active' クラスを一旦削除
+                thumbnails.forEach(t => t.classList.remove('active'));
+
+                // 4. クリックされたサムネイルにだけ 'active' クラスを追加
+                thumbnail.classList.add('active');
+            });
+        });
+    }
+});
