@@ -1,0 +1,109 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #121212; /* 全体の背景色（ダークグレー） */
+    color: #ffffff; /* 全体の文字色（白） */
+}
+
+/* ヒーローセクション（トップ画面）のデザイン */
+#hero {
+    height: 100vh; /* 画面の高さいっぱいに表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* ↓背景画像を指定。imagesフォルダに「background.jpg」という名前で画像を入れてください */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#hero h1 {
+    font-size: 4rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #007BFF; /* ボタンの色 */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* マウスを乗せた時のボタンの色 */
+}
+
+/* 各コンテンツセクションの共通デザイン */
+.content-section {
+    max-width: 900px;
+    margin: 0 auto; /* 中央揃え */
+    padding: 80px 20px;
+    text-align: center;
+
+    /* スクロールでフワッと表示させるための初期設定 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+/* JavaScriptによってこのクラスが付与されると表示される */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* キャラクター紹介のデザイン */
+.character-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* カード間の隙間 */
+}
+
+.character-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.character-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 画像を丸くする */
+    object-fit: cover; /* 画像の比率を保ったままトリミング */
+    margin-bottom: 15px;
+}
+
+/* 動作環境のデザイン */
+#specs ul {
+    list-style: none; /*箇条書きの点々を消す*/
+    padding: 0;
+    display: inline-block; /*中央揃えのため*/
+    text-align: left;
+}
+#specs li {
+    margin-bottom: 10px;
+}
+
+/* フッターのデザイン */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+}
