@@ -73,6 +73,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px; /* カード間の隙間 */
+    text-align: left; /* ← この行を追加 */
 }
 
 .character-card {
@@ -106,4 +107,80 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #000000;
+}
+
+/* ===============================================
+   「このゲームについて」セクションのデザイン
+   =============================================== */
+
+/* セクション全体の文字を左揃えにする（h2を除く） */
+#about {
+    text-align: left;
+}
+#about h2 {
+    text-align: center; /*「このゲームについて」のタイトルは中央のまま*/
+}
+
+/* 導入と結びの文章のスタイル */
+#about .intro, #about .outro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* 小見出し(h4)のスタイル */
+#about h4 {
+    font-size: 1.5rem;
+    color: #00aaff; /* 少し目立つ色に */
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #555; /* 下線を追加 */
+}
+
+/* 特徴を囲むコンテナ（PCでは2列表示にする） */
+.features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2つのカラムを作成 */
+    gap: 30px; /* カラム間の隙間 */
+    margin-bottom: 40px;
+}
+
+/* 特徴カードのスタイル */
+.feature-item {
+    background-color: #2a2a2a;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+/* ゴールの説明エリアのスタイル */
+.goal-description {
+    margin-bottom: 40px;
+}
+
+/* リストのスタイル */
+#about ul {
+    list-style: none;
+    padding-left: 0;
+}
+#about li {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ゲーム配信についての注意書きエリアのスタイル */
+.streaming-policy {
+    background-color: rgba(0, 100, 150, 0.2);
+    border-left: 5px solid #00aaff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+/* 画面が小さい時（スマホなど）は特徴カードを1列にする */
+@media (max-width: 768px) {
+    .features-container {
+        grid-template-columns: 1fr; /* 1つのカラムにする */
+    }
 }
