@@ -584,7 +584,7 @@ body.team-page-background {
 /* スマホ表示の調整 */
 @media (max-width: 768px) {
     .team-member,
-    .team-member.reverse {
+    .team-member{
         flex-direction: column; /* 縦並びにする */
         text-align: center;
     }
@@ -598,16 +598,4 @@ body.team-page-background {
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
     margin: 60px 0;
-}
-/* ===============================================
-   お問い合わせセクションのスタイル
-   =============================================== */
-#contact {
-    background-color: #1a1a1a;
-}
-
-.contact-lead {
-    max-width: 600px;
-    margin: 0 auto 40px auto; /* テキストとボタンの間に余白を追加 */
-    line-height: 1.8;
 }
