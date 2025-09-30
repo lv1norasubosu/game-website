@@ -730,3 +730,95 @@ body.team-page-background {
         left: 10px;
     }
 }
+
+/* ===============================================
+   ツールチップのスタイル
+   =============================================== */
+.social-icon[data-tooltip] {
+    position: relative; /* ツールチップの基準位置にする */
+}
+
+/* ツールチップの吹き出し部分 */
+.social-icon[data-tooltip]::before {
+    content: attr(data-tooltip); /* data-tooltip属性の内容を表示 */
+    position: absolute;
+    bottom: 150%; /* アイコンの上側に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans JP', sans-serif; /* 本文と同じフォント */
+    white-space: nowrap; /* 改行させない */
+    
+    /* 最初は非表示に */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 10;
+}
+
+/* ツールチップの小さな三角形 */
+.social-icon[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%); /* 吹き出しの下にくっつける */
+    
+    border: 6px solid transparent;
+    border-top-color: #1a1a1a;
+    
+    /* 最初は非表示に */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 10;
+}
+
+/* アイコンにホバーした時にツールチップを表示 */
+.social-icon[data-tooltip]:hover::before,
+.social-icon[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+/* ===============================================
+   仕事依頼リンクのスタイル
+   =============================================== */
+.work-request-link a {
+    color: #00aaff; /* 役割テキストなどと同じアクセントカラー */
+    text-decoration: none; /* 下線を消す */
+    font-weight: bold;
+    display: inline-block; /* 上の要素との間に余白をつけられるように */
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+.work-request-link a:hover {
+    text-decoration: underline; /* マウスを乗せたら下線を表示 */
+    color: #4dc4ff; /* 少し明るい色に */
+}
+/* チームメンバーカードの social-links のスタイル */
+.team-member-bio .social-links {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ここの数値で間隔を調整できます */
+}
+.work-request-text {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif; /* 本文と同じフォントを指定 */
+    font-size: 0.9rem; /* 少し小さめの文字に */
+    transition: color 0.3s;
+}
+
+.work-request-text:hover {
+    text-decoration: underline;
+    color: #4dc4ff;
+}
