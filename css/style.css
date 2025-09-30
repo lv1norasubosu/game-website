@@ -584,7 +584,7 @@ body.team-page-background {
 /* スマホ表示の調整 */
 @media (max-width: 768px) {
     .team-member,
-    .team-member{
+    .team-member.reverse {
         flex-direction: column; /* 縦並びにする */
         text-align: center;
     }
@@ -598,4 +598,135 @@ body.team-page-background {
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
     margin: 60px 0;
+}
+/* ===============================================
+   CTAセクションのスタイル
+   =============================================== */
+#game-cta {
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.cta-lead {
+    max-width: 600px;
+    margin: 0 auto 30px auto; /* ボタンとの間に余白を追加 */
+    line-height: 1.8;
+}
+/* ===============================================
+   開発秘話ページ専用スタイル
+   =============================================== */
+
+/* ヒーローセクション */
+#dev-hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/dev-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#dev-hero h1 { font-size: 4rem; text-shadow: 0 0 15px rgba(0,0,0,0.7); }
+#dev-hero p { font-size: 1.5rem; text-shadow: 0 0 10px rgba(0,0,0,0.7); }
+
+/* タイムラインセクション */
+#timeline-section {
+    padding: 80px 20px;
+    background-color: #121212;
+}
+
+.timeline {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* タイムラインの真ん中の線 */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #555;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* 各項目の丸いポイント */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -12px;
+    background-color: #555;
+    border: 4px solid #00aaff;
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* 左側の項目 */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* 右側の項目 */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -8px;
+}
+
+/* コンテンツの箱 */
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #1a1a1a;
+    position: relative;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.timeline-content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.timeline-date {
+    font-family: "DotGothic16", sans-serif;
+    font-size: 1.2rem;
+    color: #00aaff;
+    margin-bottom: 10px;
+}
+
+/* スマホ表示の調整 */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 10px;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    .timeline-item::after {
+        left: 10px;
+    }
 }
