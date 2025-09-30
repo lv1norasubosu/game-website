@@ -330,3 +330,272 @@ header nav {
     opacity: 1.0;
     border-color: #00aaff; /* 選択中の色 */
 }
+/* ===============================================
+チームメンバー紹介の追加スタイル
+   =============================================== */
+.character-card .role {
+    font-size: 0.9rem; /* 役割の文字を少し小さく */
+    color: #00aaff; /* 少し目立つ色に */
+    margin-top: -10px; /* 名前との間隔を詰める */
+    margin-bottom: 15px;
+}
+
+.character-card .social-links {
+    margin-top: 20px;
+}
+
+.character-card .social-links .social-icon {
+    color: #fff;
+    font-size: 1.5rem; /* アイコンのサイズ */
+    margin: 0 10px; /* アイコン間の余白 */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.character-card .social-links .social-icon:hover {
+    color: #00aaff; /* マウスを乗せた時の色 */
+}
+/* ===============================================
+CTAボタンの強化
+   =============================================== */
+.primary-cta {
+    background-color: #4c8a23; /* より目立つ緑色に変更 */
+    color: #ffffff;
+    padding: 20px 40px; /* サイズを大きく */
+    font-size: 1.5rem; /* 文字を大きく */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 影をつけて立体感を出す */
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.primary-cta:hover {
+    background-color: #60ac2e; /* ホバー時の色を少し明るく */
+    transform: translateY(-3px); /* 少し浮き上がるような動き */
+}
+
+/* Steamアイコンの調整 */
+.primary-cta .fa-steam {
+    margin-right: 10px;
+}
+
+/* CTA下の補足テキスト */
+.cta-note {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+/* ===============================================
+ヘッダーナビゲーションのリンクスタイル
+   =============================================== */
+
+/* 通常時のリンクのスタイル */
+.nav-links a {
+    color: #e0e0e0; /* 文字色を明るいグレーに */
+    text-decoration: none; /* 下線を消す */
+    margin: 0 15px; /* 各リンクの左右に余白を設ける */
+    font-weight: bold; /* 文字を少し太くして読みやすく */
+    transition: color 0.3s; /* 色が0.3秒かけて滑らかに変わるアニメーション */
+}
+
+/* マウスを乗せた時（ホバー時）のスタイル */
+.nav-links a:hover {
+    color: #00aaff; /* マウスを乗せた時の色を、サイトのテーマカラーである明るい青に */
+}
+
+/* 通常時のスタイル */
+.screenshot-grid img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s; /* 0.3秒かけて変化するアニメーション */
+}
+
+/* マウスが乗った時のスタイル */
+.screenshot-grid img:hover {
+    transform: scale(1.05); /* 5%だけ拡大する */
+}
+/* ===============================================
+   チーム紹介ページ専用スタイル
+   =============================================== */
+
+/* ページ全体の背景は固定しないように設定 */
+body.team-page-background {
+    background-attachment: scroll;
+}
+
+/* 1. チームページのヒーローセクション */
+#team-hero {
+    height: 60vh; /* 画面の高さの60% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    /* 背景画像の上に半透明の黒を重ねる */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/team-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#team-hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+#team-hero p {
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+/* 2. 各コンテンツセクションの基本設定 */
+.team-content-section {
+    padding: 80px 20px;
+}
+
+/* 中央揃え用のコンテナ */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* セクションタイトル */
+.team-content-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* チーム紹介文セクション */
+#team-intro {
+    background-color: #1a1a1a; /* 少し明るい背景色 */
+}
+
+.team-story-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.team-photo {
+    flex: 1; /* 比率1 */
+}
+
+.team-photo img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.team-text {
+    flex: 2; /* 比率2でテキストエリアを広く */
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* メンバー紹介セクション */
+#team-members {
+    background-color: #121212; /* メインの背景色と同じ */
+}
+
+/* スマホ用の調整 */
+@media (max-width: 768px) {
+    .team-story-container {
+        flex-direction: column; /* 縦並びにする */
+    }
+}
+/* ===============================================
+   チーム紹介ページのアニメーションを上書き
+   =============================================== */
+#team-page .content-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ===============================================
+   新しいチーム紹介セクションのスタイル
+   =============================================== */
+
+.team-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* 各メンバー間の余白 */
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* 画像とテキストの間の余白 */
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* 画像を右側に配置するためのスタイル */
+.team-member.reverse {
+    flex-direction: row-reverse;
+}
+
+.team-member-photo {
+    flex-basis: 250px; /* 写真の幅を固定 */
+    flex-shrink: 0;
+}
+
+.team-member-photo img {
+    width: 100%;
+    border-radius: 50%; /* 写真を丸くする */
+    border: 5px solid #444;
+}
+
+.team-member-bio {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.team-member-bio h3 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.team-member-bio .role {
+    font-size: 1.1rem;
+    color: #00aaff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* スキルタグのスタイル */
+.skill-tags {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.skill-tags span {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    padding: 5px 12px;
+    margin: 3px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* スマホ表示の調整 */
+@media (max-width: 768px) {
+    .team-member,
+    .team-member.reverse {
+        flex-direction: column; /* 縦並びにする */
+        text-align: center;
+    }
+
+    .team-member-bio {
+        text-align: center;
+    }
+}
+.section-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+    margin: 60px 0;
+}
