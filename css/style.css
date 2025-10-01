@@ -471,7 +471,11 @@ body.team-page-background {
 
 /* チーム紹介文セクション */
 #team-intro {
-    background-color: #1a1a1a; /* 少し明るい背景色 */
+    max-width: 1200px;
+    margin: 60px auto; /* ← 上下に60pxの余白を追加 */
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    padding: 60px 40px;
 }
 
 .team-story-container {
@@ -497,7 +501,7 @@ body.team-page-background {
 
 /* メンバー紹介セクション */
 #team-members {
-    background-color: #121212; /* メインの背景色と同じ */
+    
 }
 
 /* スマホ用の調整 */
@@ -526,13 +530,17 @@ body.team-page-background {
 .team-member {
     display: flex;
     align-items: center;
-    gap: 40px; /* 画像とテキストの間の余白 */
-    background-color: #2a2a2a;
+    gap: 40px;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 
+    /* ▼▼▼ 背景を半透明の「すりガラス」風にするための修正 ▼▼▼ */
+    background-color: rgba(42, 42, 42, 0.9); /* 半透明のグレー（75%の濃さ） */
+    backdrop-filter: blur(10px);              /* 背景をぼかす「すりガラス」効果 */
+    -webkit-backdrop-filter: blur(10px);      /* Safari用の設定 */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 輪郭をうっすらと見せる */
+}
 /* 画像を右側に配置するためのスタイル */
 .team-member.reverse {
     flex-direction: row-reverse;
