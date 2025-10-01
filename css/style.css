@@ -4,11 +4,12 @@ body {
     margin: 0;
     font-family: sans-serif;
     color: #ffffff;
-    background-color: #121212;
+    background: linear-gradient(to bottom, #181818, #121212);
     /* ▼▼▼ linear-gradientを削除し、url()のみにする ▼▼▼ */
     background-image: url('../images/main-visual.jpg');
     background-size: cover;
     background-position: center;
+
     background-attachment: fixed; /* 背景を固定 */
 }
 
@@ -401,6 +402,8 @@ CTAボタンの強化
 /* マウスを乗せた時（ホバー時）のスタイル */
 .nav-links a:hover {
     color: #00aaff; /* マウスを乗せた時の色を、サイトのテーマカラーである明るい青に */
+    transform: translateY(-2px); /* 少しだけ上に動かす */
+    transition: transform 0.3s;
 }
 
 /* 通常時のスタイル */
@@ -536,14 +539,26 @@ body.team-page-background {
 }
 
 .team-member-photo {
-    flex-basis: 250px; /* 写真の幅を固定 */
+    /* flex-basis: 250px; ← この幅を基準にするため、親要素でサイズを定義 */
+    width: 250px; /* 写真を表示するボックスの幅 */
+    height: 250px; /* 写真を表示するボックスの高さ */
     flex-shrink: 0;
+    
+    /* ▼▼▼ この3行が最も重要です ▼▼▼ */
+    border-radius: 50%; /* ボックスを正円にする */
+    overflow: hidden;   /* ボックスからはみ出した画像を隠す */
+    position: relative; /* imgタグを中央に配置するための基準にする */
+    /* ▲▲▲ ▲▲▲ ▲▲▲ */
+
+    border: 5px solid #444; /* 外側の枠線 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 少し影を追加して立体的に */
 }
 
 .team-member-photo img {
-    width: 100%;
-    border-radius: 50%; /* 写真を丸くする */
-    border: 5px solid #444;
+    width: 100%;   /* 親要素の幅に合わせて画像を最大化 */
+    height: 100%;  /* 親要素の高さに合わせて画像を最大化 */
+    object-fit: cover; /* ★★★ これが重要: 画像の縦横比を保ちつつ、ボックスに合わせて拡大・切り抜き ★★★ */
+    display: block; /* 不要な余白を消す */
 }
 
 .team-member-bio {
@@ -571,6 +586,11 @@ body.team-page-background {
     margin-bottom: 20px;
 }
 
+/* ===============================================
+   スキルタグのスタイル（ホバーエフェクト込み）
+   =============================================== */
+
+/* 通常時のスキルタグのスタイル */
 .skill-tags span {
     display: inline-block;
     background-color: #555;
@@ -579,6 +599,15 @@ body.team-page-background {
     margin: 3px;
     border-radius: 15px;
     font-size: 0.8rem;
+    
+    /* ▼▼▼ この一行を追加 ▼▼▼ */
+    transition: transform 0.2s, background-color 0.2s; /* 変化を0.2秒かけて滑らかにするアニメーション */
+}
+
+/* マウスを乗せた時（ホバー時）のスキルタグのスタイル */
+.skill-tags span:hover {
+    transform: scale(1.1); /* 10%だけ拡大 */
+    background-color: #00aaff; /* 色をアクセントカラーに変更 */
 }
 
 /* スマホ表示の調整 */
@@ -821,4 +850,54 @@ body.team-page-background {
 .work-request-text:hover {
     text-decoration: underline;
     color: #4dc4ff;
+}
+/* ===============================================
+   セクションデザインのアップグレード
+   =============================================== */
+
+/* セクション見出し(h2)の共通スタイル */
+.team-content-section h2 {
+    display: inline-block; /* 下線が文字幅にフィットするように */
+    position: relative; /* 下線の基準位置にする */
+    padding-bottom: 15px; /* 下線との余白 */
+    margin-bottom: 60px; /* 見出しとコンテンツの間の余白を広げる */
+}
+
+/* 見出しの下にアクセントカラーの線を追加 */
+.team-content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* 線の長さ */
+    height: 4px; /* 線の太さ */
+    background-color: #00aaff; /* アクセントカラー */
+    border-radius: 2px;
+}
+
+/* OUR STORYセクションのテキストエリアの調整 */
+.team-text {
+    padding-left: 25px; /* 左側に余白を追加 */
+    border-left: 3px solid #555; /* 左側に区切り線を追加 */
+}
+
+/* セクション間の区切り線のスタイル */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(85, 85, 85, 0.75), rgba(0, 0, 0, 0));
+    margin: 20px 0 80px 0; /* 上下の余白 */
+}
+/* ===============================================
+   見出しのスタイル（フォントとグラデーション）
+   =============================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "DotGothic16", sans-serif;
+    
+    /* グラデーションのためのスタイル */
+    background: linear-gradient(to right, #ffffff, #c0c0c0);
+    color: transparent; /* 文字自体の色は透明にする */
+    -webkit-background-clip: text; /* 背景を文字の形で切り抜く (Chrome, Safari用) */
+    background-clip: text; /* 背景を文字の形で切り抜く (標準) */
 }
