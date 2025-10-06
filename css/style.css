@@ -895,6 +895,14 @@ body.team-page-background {
 /* ===============================================
    見出しのスタイル（フォントとグラデーション）
    =============================================== */
+
+
+.nav-links .page-link {
+    margin-left: 25px;
+    padding-left: 25px;
+    border-left: 1px solid #555; /* 左側に1pxの灰色の線を追加 */
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "DotGothic16", sans-serif;
     
