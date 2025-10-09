@@ -9,91 +9,38 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>【あなたのゲーム名】公式サイト</title>
-      <link rel="stylesheet" href="css/style.css" />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      />
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <title>【ゲームのタイトル】公式サイト</title>
-
-        <meta
-          name="description"
-          content="【ここにゲームの簡単な説明文を120文字程度で書きます。例：記憶を失ったアンドロイドが真実を求めて旅をする、探索型2Dアクションゲーム。】"
-        />
-
-        <meta property="og:title" content="【ゲームのタイトル】公式サイト" />
-        <meta property="og:description" content="【②と同じ説明文でOK】" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="【あなたのサイトのURL。例: https://your-game.com】"
-        />
-        <meta
-          property="og:image"
-          content="【シェアされた時に表示したい画像のURL。例: https://your-game.com/images/ogp-image.jpg】"
-        />
-        <meta property="og:site_name" content="【ゲームのタイトル】" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-
-        <link rel="stylesheet" href="css/style.css" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
-      </head>
-    </head>
+    <meta
+      name="description"
+      content="1手の重みが、あなたを閉じ込める。一つ一つの順序や取捨選択が大きな影響を持つ、高難易度脱出ゲーム。"
+    />
+    <meta property="og:title" content="【トモヒガラ】公式サイト" />
+    <meta property="og:description" content="1手の重みが、あなたを閉じ込める。一つ一つの順序や取捨選択が大きな影響を持つ、高難易度脱出ゲーム。" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="【あなたのサイトのURL】"
+    />
+    <meta
+      property="og:image"
+      content="【シェアされた時に表示したい画像のURL】"
+    />
+    <meta property="og:site_name" content="【トモヒガラ】" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <header>
       <nav>
-        <div class="logo">
-          <a href="#hero"
-            ><img src="images/logo.png" alt="トモヒガラ ロゴ"
-          /></a>
-        </div>
-        <div class="social-links">
-          <a
-            href="https://x.com/IeiIei120709"
-            target="_blank"
-            class="social-icon"
-            ><i class="fa-brands fa-x-twitter"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/@%E3%83%88%E3%83%A2%E3%83%92%E3%82%AC%E3%83%A9LV1%E3%81%AE%E3%83%A9%E3%82%B9%E3%83%9C%E3%82%B9"
-            target="_blank"
-            class="social-icon"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
-        </div>
-      </nav>
-      <header>
-        <nav>
-          <a href="#hero" class="logo"
-            ><img src="images/logo.png" alt="ゲームロゴ"
-          /></a>
-          <div class="nav-links">
-            <a href="#about">このゲームについて</a>
-            <a href="#media">メディア</a>
-            <a href="#characters">登場人物</a>
-            <a href="#specs">動作環境</a>
-            <a href="team.html" class="page-link">チーム</a>
-            <!-- <a href="development.html">開発秘話</a> -->
-
-           
-            
+        <a href="#hero" class="logo"
+          ><img src="images/logo.png" alt="ゲームロゴ"
+        /></a>
+        <div class="nav-links">
+          <a href="#about">このゲームについて</a>
+          <a href="#media">メディア</a>
+          <a href="#characters">登場人物</a>
+          <a href="#specs">動作環境</a>
+          <a href="team.html" class="page-link">チーム</a>
           </div>
-          <div class="social-icons"></div>
-        </nav>
-      </header>
+      </nav>
     </header>
 
     <section id="hero">
@@ -101,13 +48,12 @@
         <p>
           1手の重みが、あなたを閉じ込める<br />一つ一つの順序や取捨選択が大きな影響を持つ、高難易度脱出ゲーム
         </p>
-        <a
-          href="【あなたのSteamストアページのURL】"
-          target="_blank"
-          class="cta-button primary-cta"
-        >
-          <i class="fab fa-steam"></i> Steamでウィッシュリストに追加
-        </a>
+        <div class="steam-buttons">
+          
+          <a href="https://store.steampowered.com/app/4055020/_/" target="_blank" class="cta-button primary-cta">
+              <i class="fab fa-steam"></i> 本編をウィッシュリストに追加
+          </a>
+        </div>
         <p class="cta-note">発売日に通知が届きます！</p>
       </div>
     </section>
@@ -238,17 +184,6 @@
     </main>
 
     <footer>
-      <div class="social-links-footer">
-        <a href="https://x.com/IeiIei120709" target="_blank" class="social-icon"
-          ><i class="fa-brands fa-x-twitter"></i
-        ></a>
-        <a
-          href="https://www.youtube.com/@%E3%83%88%E3%83%A2%E3%83%92%E3%82%AC%E3%83%A9LV1%E3%81%AE%E3%83%A9%E3%82%B9%E3%83%9C%E3%82%B9"
-          target="_blank"
-          class="social-icon"
-          ><i class="fa-brands fa-youtube"></i
-        ></a>
-      </div>
       <p>&copy; LV1のラスボス</p>
     </footer>
 

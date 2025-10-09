@@ -912,3 +912,87 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text; /* 背景を文字の形で切り抜く (Chrome, Safari用) */
     background-clip: text; /* 背景を文字の形で切り抜く (標準) */
 }
+
+/* ===============================================
+   Steamボタンコンテナ
+   =============================================== */
+.steam-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* ボタン間の隙間 */
+    margin-top: 30px;
+    flex-wrap: wrap; /* スマホなどで画面幅が狭い時に折り返す */
+}
+/* コンテナ内のボタンの上マージンをリセット */
+.steam-buttons .cta-button {
+    margin-top: 0;
+}
+
+/* ===============================================
+   チーム紹介ページのサブタイトル
+   =============================================== */
+.team-subtitle {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    margin-top: 60px; /* 上の区切り線とのマージン */
+    color: #e0e0e0;
+    /* --- ここから追加・変更 --- */
+    background-color: rgba(18, 18, 18, 0.85); /* 半透明の黒い背景 */
+    padding: 15px 30px; /* 内側の余白 */
+    border-radius: 8px; /* 角を少し丸くする */
+    display: inline-block; /* 背景が見出しの幅に合わせるように */
+    max-width: 90%; /* 見出しが長すぎるときのために最大幅を設定 */
+}
+
+/* ===============================================
+   愉快な仲間たちセクションのラッパー
+   =============================================== */
+/* ===============================================
+   連絡先メールアドレスのスタイル
+   =============================================== */
+.contact-email {
+    display: inline-block;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 1px solid #555;
+    margin-top: 20px;
+}
+
+/* ===============================================
+   仕事依頼テキストの調整
+   =============================================== */
+.team-member-bio .work-request-text {
+    color: #e0e0e0; /* 少し落ち着いた白に */
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+.funny-members-section {
+    background-color: rgba(0, 0, 0, 0.85); /* 黒背景（少し透ける） */
+    color: #fff; /* 文字を白に */
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px; /* 他の要素に合わせて角を丸くしたい場合 */
+    margin: 60px 0; /* 上下に余白 */
+}
+
+.funny-members-section .team-subtitle {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+
+
+/* ===============================================
+   愉快な仲間たちセクションのラッパー（不要になったため削除）
+   =============================================== */
+/* .fun-members-wrapper スタイルは削除します */
