@@ -996,3 +996,15 @@ h1, h2, h3, h4, h5, h6 {
    愉快な仲間たちセクションのラッパー（不要になったため削除）
    =============================================== */
 /* .fun-members-wrapper スタイルは削除します */
+
+footer {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 5px 0;
+}
