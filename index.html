@@ -91,6 +91,24 @@
 </script>
 
 </head>
+
+<script>
+  (function () {
+    const setOffset = () => {
+      const h = document.querySelector('header')?.offsetHeight || 0;
+      // スマホだけ適用（768px以下）
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        document.body.style.paddingTop = h + 'px';
+      } else {
+        document.body.style.paddingTop = ''; // PCは元に戻す
+      }
+    };
+    window.addEventListener('load', setOffset);
+    window.addEventListener('resize', setOffset);
+  })();
+
+</script>
+
   <body>
     <header>
       <h1>ドット絵脱出ゲーム「トモヒガラ」公式サイト</h1>
