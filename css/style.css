@@ -5,25 +5,32 @@
    =============================================== */
 
 /* 横スクロールを防止するための設定 */
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* 横方向のはみ出しを強制的に隠す */
-}
+/* ===============================================
+   ページ全体の基本設定
+   =============================================== */
 
-/* ページ全体のデザイン */
-body {
-    font-family: 'Noto Sans JP', sans-serif; /* 本文のフォント */
-    color: #e0e0e0; /* 基本の文字色 */
-    background-color: #121212; /* 背景画像が読み込まれない場合の予備色 */
-    
-    /* 背景画像の設定 */
+/* 背景はhtmlに設定 */
+html {
     background-image: url('../images/main-visual.jpg');
+    background-color: #121212; /* 予備の背景色 */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* 背景を固定してパララックス効果を出す */
+    background-attachment: fixed;
+}
+
+/* 横スクロール防止などの基本設定 */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* bodyの背景は透明にして、文字設定などを行う */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #e0e0e0;
+    background-color: transparent; /* htmlの背景が見えるように透明にする */
 }
 
 /* ヒーローセクション（トップ画面）のデザイン */
@@ -204,6 +211,17 @@ footer {
     body {
         background-attachment: scroll;
         background-image: url('../images/background-mobile.jpg'); /* スマホ用の背景画像に切り替え */
+        html {
+        background-image: url('../images/background-mobile.jpg');
+        background-color: #495060;
+        background-attachment: scroll;
+        background-size: 100% auto;
+        background-position: 0 80px;
+        background-repeat: no-repeat;
+    }
+    }
+    .features-container {
+        grid-template-columns: 1fr;
     }
 
     /* ヘッダーを1行にまとめるためのスタイル */
@@ -283,6 +301,8 @@ header {
     left: 0;
     z-index: 1000; /* 他の要素より手前に表示 */
     border-bottom: 1px solid #333;
+    transition: transform 0.3s;
+    
 }
 
 header nav {
@@ -1147,3 +1167,7 @@ header h1 {
         padding: 12px 24px;
     }
 }
+/* ===============================================
+   スクロールでヘッダーを表示/非表示にする機能
+   =============================================== */
+
