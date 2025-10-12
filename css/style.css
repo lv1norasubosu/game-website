@@ -187,11 +187,20 @@ footer {
 
 /* 画面が小さい時（スマホなど）は特徴カードを1列にする */
 @media (max-width: 768px) {
+    /* 既存のスマホ用スタイル */
     body {
         background-attachment: scroll; /* スマホでは背景の固定を解除する */
     }
     .features-container {
         grid-template-columns: 1fr; /* 1つのカラムにする */
+    }
+
+    /* ▼▼▼ スマホでの横スクロールを修正するコード ▼▼▼ */
+    /* ヒーローセクションの見出しの文字サイズを調整 */
+    #team-hero h1,
+    #dev-hero h1 {
+        font-size: 2.5rem; /* スマホでは文字サイズを少し小さくする */
+        word-break: break-all; /* はみ出しそうな長い単語を強制的に改行させる */
     }
 }
 
