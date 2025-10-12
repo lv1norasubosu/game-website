@@ -1008,3 +1008,7 @@ footer {
 footer p {
   margin: 5px 0;
 }
+
+header h1 {
+    display: none; /* h1を非表示にする */
+}
