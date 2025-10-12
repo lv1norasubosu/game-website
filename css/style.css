@@ -1,16 +1,29 @@
 /* 基本設定 */
 /* 基本設定 */
-body {
+/* ===============================================
+   ページ全体の基本設定
+   =============================================== */
+
+/* 横スクロールを防止するための設定 */
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
-    font-family: sans-serif;
-    color: #ffffff;
-    background: linear-gradient(to bottom, #181818, #121212);
-    /* ▼▼▼ linear-gradientを削除し、url()のみにする ▼▼▼ */
+    padding: 0;
+    overflow-x: hidden; /* 横方向のはみ出しを強制的に隠す */
+}
+
+/* ページ全体のデザイン */
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 本文のフォント */
+    color: #e0e0e0; /* 基本の文字色 */
+    background-color: #121212; /* 背景画像が読み込まれない場合の予備色 */
+    
+    /* 背景画像の設定 */
     background-image: url('../images/main-visual.jpg');
     background-size: cover;
     background-position: center;
-
-    background-attachment: fixed; /* 背景を固定 */
+    background-attachment: fixed; /* 背景を固定してパララックス効果を出す */
 }
 
 /* ヒーローセクション（トップ画面）のデザイン */
@@ -187,43 +200,71 @@ footer {
 
 /* 画面が小さい時（スマホなど）は特徴カードを1列にする */
 @media (max-width: 768px) {
-    /* 既存のスマホ用スタイル */
+    /* bodyの背景設定 */
     body {
         background-attachment: scroll;
+        background-image: url('../images/background-mobile.jpg'); /* スマホ用の背景画像に切り替え */
     }
-    .features-container {
-        grid-template-columns: 1fr;
+
+    /* ヘッダーを1行にまとめるためのスタイル */
+    header nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
     }
+    .logo img {
+        height: 30px;
+    }
+    .nav-links {
+        margin-top: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .nav-links a {
+        padding: 0 5px;
+        font-size: 0.7rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    /* ヒーローセクションの文字サイズ調整 */
+    #hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+
+    /* 横スクロールを防ぐためのスタイル */
     #team-hero h1,
     #dev-hero h1 {
         font-size: 2.5rem;
         word-break: break-all;
     }
 
-    /* ▼▼▼ ここから下がヘッダーを1行にするための修正 ▼▼▼ */
-
-    /* ヘッダーナビゲーション全体 */
-    header nav {
-        /* flex-direction: column; を削除、またはコメントアウト */
-        padding: 10px 5px; /* 左右の余白を詰める */
+    /* index.htmlの「このゲームについて」セクションのレイアウト調整 */
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* team.htmlのレイアウト調整 */
+    .team-story-container,
+    .team-member,
+    .team-member.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .team-member-bio {
+        text-align: center;
     }
 
-    /* ロゴ画像のサイズを少し小さくする */
-    .logo img {
-        height: 30px;
-    }
-
-    /* ナビゲーションリンクのコンテナ */
-    .nav-links {
-        margin-top: 0; /* ロゴとの間の余白をなくす */
-        /* flex-wrap や justify-content の設定は不要なので削除 */
-    }
-
-    /* 各ナビゲーションリンク */
-    .nav-links a {
-        margin: 0 4px;      /* リンク間の左右の余白をさらに詰める */
-        font-size: 0.75rem; /* 文字サイズを小さくして収まるようにする */
-        white-space: nowrap;  /* 文字が改行されるのを防ぐ */
+    .content-section {
+        padding: 40px 15px; /* ボックスの内側の余白を上下・左右ともに減らす */
+        margin: 30px auto;  /* ボックス間の上下の余白を少し詰める */
+        
     }
 }
 
