@@ -840,11 +840,15 @@ body.team-page-background {
     color: #4dc4ff; /* 少し明るい色に */
 }
 /* チームメンバーカードの social-links のスタイル */
-.team-member-bio .social-links {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px; /* ここの数値で間隔を調整できます */
+.team-member-bio .social-links .social-icon {
+    color: #00aaff; /* ← ここを青色に変更します */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.team-member-bio .social-links .social-icon:hover {
+    color: #4dc4ff; /* マウスを乗せた時の色も、少し明るい青に変更 */
 }
 .work-request-text {
     color: #00aaff;
@@ -1011,4 +1015,22 @@ footer p {
 
 header h1 {
     display: none; /* h1を非表示にする */
+}
+
+/* ===============================================
+   CONTACTセクションのメールリンクのスタイル
+   =============================================== */
+.contact-email {
+    color: #00aaff; /* サイトのアクセントカラーに合わせる */
+    text-decoration: none; /* 下線を消す */
+    font-weight: bold;
+    font-size: 1.1rem; /* 少し文字を大きくする */
+    display: inline-block; /* 上の要素との間に余白をつけられるように */
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.contact-email:hover {
+    text-decoration: underline; /* マウスを乗せたら下線を表示 */
+    color: #4dc4ff; /* 少し明るい色に */
 }
