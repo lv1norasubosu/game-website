@@ -187,10 +187,14 @@ footer {
 
 /* 画面が小さい時（スマホなど）は特徴カードを1列にする */
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* スマホでは背景の固定を解除する */
+    }
     .features-container {
         grid-template-columns: 1fr; /* 1つのカラムにする */
     }
 }
+
 
 /* ヒーローセクション（トップ画面）のデザイン */
 
