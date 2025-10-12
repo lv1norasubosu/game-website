@@ -1034,3 +1034,40 @@ header h1 {
     text-decoration: underline; /* マウスを乗せたら下線を表示 */
     color: #4dc4ff; /* 少し明るい色に */
 }
+/* ===============================================
+   スマートフォン用の表示調整 (レスポンシブ対応)
+   =============================================== */
+@media (max-width: 768px) {
+
+    /* ヘッダーのナビゲーション全体 */
+    header nav {
+        flex-direction: column; /* ロゴとリンクを縦に並べる */
+        padding: 10px;
+    }
+
+    /* ナビゲーションリンクのコンテナ */
+    .nav-links {
+        margin-top: 15px; /* ロゴとの間に余白を作る */
+        display: flex;
+        flex-wrap: wrap;      /* リンクが画面幅を超える場合に折り返す */
+        justify-content: center; /* 折り返したリンクを中央揃えにする */
+    }
+
+    /* 各ナビゲーションリンク */
+    .nav-links a {
+        margin: 5px 10px; /* リンク間の余白を調整 */
+        font-size: 0.9rem;  /* 文字サイズを少し小さくして収まりやすくする */
+    }
+
+    /* ヒーローセクションの文字サイズを調整 */
+    #hero p {
+        font-size: 1rem;
+        padding: 0 10px; /* 左右に少し余白を追加 */
+    }
+
+    /* CTAボタンの文字サイズを調整 */
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+}
