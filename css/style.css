@@ -1167,3 +1167,38 @@ footer {
   .desktop-only{ display: block; }
   .mobile-only{ display: none; }
 }
+
+/* ウィッシュリストボタンの色を青に強制的に上書き */
+#game-cta .cta-button.primary-cta {
+    background: linear-gradient(180deg, #1e6bff, #155de6); /* 青のグラデーション */
+    box-shadow: 0 6px 18px rgba(21,93,230,.35);
+}
+/* ===============================================
+   画像ペーストエリアのスタイル
+   =============================================== */
+.paste-area {
+  width: 100%;
+  padding: 30px 14px; /* 上下の余白を多めに */
+  background-color: #2b2b2b;
+  border: 2px dashed #474747; /* 点線でエリアを分かりやすく */
+  border-radius: 8px;
+  color: #aaa; /* テキストの色を少し薄く */
+  font-size: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer; /* クリックできるような見た目に */
+  transition: border-color .15s ease, background-color .15s ease;
+}
+
+.paste-area:hover {
+  border-color: #3b82f6;
+  background-color: #2f2f2f;
+}
+
+/* ペーストされた画像のプレビュースタイル */
+.pasted-image-preview {
+  max-width: 100%;
+  max-height: 200px; /* プレビューが大きくなりすぎないように制限 */
+  border-radius: 4px;
+  object-fit: contain;
+}

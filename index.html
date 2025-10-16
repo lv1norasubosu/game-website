@@ -84,7 +84,55 @@
 </script>
 
 </head>
+<script>
+  // ▼▼▼ この一行を追加 ▼▼▼
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // HTML要素を取得
+    const pasteArea = document.getElementById('paste-area');
+    const fileInput = document.getElementById('screenshot-input');
 
+    // pasteAreaとfileInputが両方見つかった場合のみ、処理を続ける
+    if (pasteArea && fileInput) {
+      // paste-areaで「paste」イベントが発生したら実行
+      pasteArea.addEventListener('paste', function(e) {
+        // クリップボードのデータを取得
+        const items = e.clipboardData.items;
+
+        // 画像ファイルを探す
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].type.indexOf('image') !== -1) {
+            
+            // 画像データをファイルオブジェクトとして取得
+            const blob = items[i].getAsFile();
+            
+            // 取得したファイルを、隠された<input type="file">にセットする
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(blob);
+            fileInput.files = dataTransfer.files;
+
+            // プレビューを表示
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              // 既存のテキストを消去
+              pasteArea.innerHTML = '';
+              // プレビュー画像を作成して追加
+              const img = document.createElement('img');
+              img.src = event.target.result;
+              img.className = 'pasted-image-preview';
+              pasteArea.appendChild(img);
+            };
+            reader.readAsDataURL(blob);
+
+            // 処理が終わったらループを抜ける
+            break;
+          }
+        }
+      });
+    }
+  // ▼▼▼ この一行を追加 ▼▼▼
+  });
+</script>
   <body>
     <header>
       <h1>ドット絵脱出ゲーム「トモヒガラ」公式サイト</h1>
@@ -273,6 +321,14 @@
           <label for="message">ご意見・ご感想</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
+
+<div class="form-group">
+  <label for="screenshot">スクリーンショット (任意)</label>
+  <input type="file" id="screenshot-input" name="screenshot" accept="image/png, image/jpeg, image/gif" style="display: none;">
+  <div id="paste-area" class="paste-area">
+    ここに画像をペーストできます (Ctrl+V)
+  </div>
+</div>
 
         <div class="form-group">
           <button type="submit" class="cta-button">送信する</button>
