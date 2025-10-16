@@ -202,34 +202,56 @@
         </section>
         </main>
 
-    <section id="game-cta" class="team-content-section">
-        <div class="container">
-            <h2 class="desktop-only">もうすぐ、あなたのもとへ。</h2>
-            <h2 class="mobile-only">もうすぐ、<br>あなたのもとへ。</h2>
-            <p class="cta-lead">
-                ウィッシュリストに登録してもらえると非常に励みになります！
-            </p>
-            <div class="steam-buttons">
-                
-                <a href="https://store.steampowered.com/app/4055020/_/" target="_blank" class="cta-button primary-cta">
-                    <i class="fab fa-steam"></i> 本編をウィッシュリストに追加
-                </a>
-            </div>
-            <p class="cta-note">発売日に通知が届きます！</p>
-        </div>
-    </section>
-
-   <section id="contact" class="team-content-section">
+    </main>
+<section id="game-cta" class="team-content-section">
     <div class="container">
-        <h2>CONTACT</h2>
-        <p class="contact-lead">
-            このゲームに関するご意見、メディア関係者の方からの取材依頼、その他ビジネスに関するご相談は、以下のメールアドレスまでご連絡ください。
+        <h2 class="desktop-only">もうすぐ、あなたのもとへ。</h2>
+        <h2 class="mobile-only">もうすぐ、<br>あなたのもとへ。</h2>
+        <p class="cta-lead">
+            ウィッシュリストに登録してもらえると非常に励みになります！
         </p>
-        <a href="mailto:lv1norasubosutomohigara@gmail.com" class="contact-email">lv1norasubosutomohigara@gmail.com</a>
+        <div class="steam-buttons">
+            <a href="https://store.steampowered.com/app/4055020/_/" target="_blank" class="cta-button primary-cta">
+                <i class="fab fa-steam"></i> 本編をウィッシュリストに追加
+            </a>
+        </div>
+        <p class="cta-note">発売日に通知が届きます！</p>
     </div>
 </section>
+<section id="contact">
+      <h2>CONTACT</h2>
+      <p>
+        このウェブサイトのデザインや機能に関するご意見・ご感想、お問い合わせはこちらのフォームからお願いします。
+      </p>
+      
+      <form name="site-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="site-feedback" />
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="form-group">
+          <label for="name">お名前 (任意)</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス (任意)</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="form-group">
+          <label for="message">ご意見・ご感想</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="cta-button">送信する</button>
+        </div>
+      </form>
+    </section>
+
     <footer>
-        <p>&copy; 2025 【トモヒガラ】</p>
+      <p>© 2025 Tomohigara Studio</p>
+      <p>運営者: トモヒガラ / お問い合わせ: info@tomohigara.com</p>
     </footer>
 
     <script src="js/script.js"></script>

@@ -939,3 +939,231 @@ footer p {
     .team-content-section .desktop-only { display: none; }
     .team-content-section .mobile-only { display: block; }
 }
+
+/* ===============================================
+   フォーム用のスタイル
+   =============================================== */
+/* ===== フォーム：基礎 ===== */
+/* ===============================================
+   お問い合わせセクション & フォーム
+   =============================================== */
+
+/* セクション全体（フォームを囲むカード） */
+#contact {
+  max-width: 600px;
+  margin: 0 auto 80px; /* ページ下部に十分な余白を確保 */
+  padding: 28px 32px;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #2f2f2f;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* 見出しと説明文 */
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+#contact p {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+/* フォームの各要素グループ */
+.form-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #e7e7e7;
+}
+
+/* 入力欄 (input と textarea 共通) */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #2b2b2b;
+  border: 1px solid #474747;
+  border-radius: 8px;
+  color: #f0f0f0;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+/* テキストエリアの縦リサイズのみ許可 */
+.form-group textarea {
+  resize: vertical;
+}
+
+/* 入力欄フォーカス時のアクセント */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.25);
+  background-color: #2f2f2f;
+}
+
+/* 送信ボタンのスタイル */
+#contact .form-group button.cta-button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #1e6bff, #155de6);
+  box-shadow: 0 6px 18px rgba(21,93,230,.35);
+  cursor: pointer;
+  transition: transform .06s ease, filter .15s ease, box-shadow .15s ease;
+}
+
+#contact .form-group button.cta-button:hover { 
+  filter: brightness(1.05); 
+}
+
+#contact .form-group button.cta-button:active { 
+  transform: translateY(1px); 
+}
+
+/* スパム対策の隠しフィールド */
+.hidden { 
+  display: none; 
+}
+
+
+/* ===============================================
+   フッター
+   =============================================== */
+footer {
+  text-align: center;
+  color: #aaa;
+  font-size: .92rem;
+  padding: 24px 16px 40px;
+  border-top: 1px solid #2f2f2f;
+}
+#contact p {
+  color: #e0e0e0; /* 明るい文字色を指定 */
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+/* ===============================================
+   CTAセクションと下部コンテンツの余白調整
+   =============================================== */
+#game-cta {
+    margin-bottom: 80px; /* 下に80pxの余白を追加 */
+}
+
+/* =========================
+   CTA セクション（仕上げ）
+   ========================= */
+
+:root{
+  --accent: #3b82f6;          /* 青のアクセント（お好みで） */
+  --steam-green-top: #2eb62c; /* Steam風グリーン */
+  --steam-green-btm: #239b22;
+}
+
+#game-cta{
+  /* 背景に“浮いたカード”感を出す */
+  background: rgba(0,0,0,0.60);
+  backdrop-filter: blur(4px);
+  border: 1px solid #2f2f2f;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.40);
+
+  /* 呼吸する余白（上下はしっかり） */
+  padding: 80px 24px;
+  margin: 80px auto;          /* 下に空間を作ってフッターと分離 */
+}
+
+#game-cta .container{
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 見出し：太め＋短い下線で“セクションの主役”に */
+#game-cta h2{
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .01em;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  position: relative;
+}
+#game-cta h2::after{
+  content:"";
+  display:block;
+  width: 72px;                /* 短い下線＝リズムが出る */
+  height: 3px;
+  margin: 12px auto 0;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* リード文は少し薄く・幅を絞って読みやすく */
+#game-cta .cta-lead{
+  color: #d6d6d6;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 14px auto 28px;
+}
+
+/* ボタン：グラデ＋影で“主役”に、でも派手すぎない */
+#game-cta .steam-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+#game-cta .steam-buttons .primary-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+
+  background: linear-gradient(180deg, var(--steam-green-top), var(--steam-green-btm));
+  box-shadow: 0 8px 22px rgba(46,182,44,.30);
+  transition: transform .06s ease, filter .15s ease, box-shadow .15s ease;
+}
+#game-cta .steam-buttons .primary-cta:hover{
+  filter: brightness(1.06);
+  box-shadow: 0 10px 28px rgba(46,182,44,.38);
+}
+#game-cta .steam-buttons .primary-cta:active{
+  transform: translateY(1px);
+}
+
+/* 補足文は一段落とす＆薄めにして階層化 */
+#game-cta .cta-note{
+  color: #aeb0b3;
+  font-size: .95rem;
+  margin-top: 18px;
+}
+
+/* PC/モバイルの見出し切替（あなたのHTMLに合わせて） */
+.desktop-only{ display: none; }
+.mobile-only{ display: block; }
+@media (min-width: 768px){
+  .desktop-only{ display: block; }
+  .mobile-only{ display: none; }
+}
