@@ -776,27 +776,6 @@ footer p {
   margin: 5px 0;
 }
 
-header h1 {
-    display: none; /* h1を非表示にする */
-}
-
-/* ===============================================
-   CONTACTセクションのメールリンクのスタイル
-   =============================================== */
-.contact-email {
-    color: #00aaff; /* サイトのアクセントカラーに合わせる */
-    text-decoration: none; /* 下線を消す */
-    font-weight: bold;
-    font-size: 1.1rem; /* 少し文字を大きくする */
-    display: inline-block; /* 上の要素との間に余白をつけられるように */
-    margin-top: 10px;
-    transition: color 0.3s;
-}
-
-.contact-email:hover {
-    text-decoration: underline; /* マウスを乗せたら下線を表示 */
-    color: #4dc4ff; /* 少し明るい色に */
-}
 /* ===============================================
    スマートフォン用の表示調整 (レスポンシブ対応)
    =============================================== */
@@ -889,6 +868,63 @@ header h1 {
     .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; left: 0 !important; }
     .timeline-item::after { left: 10px; }
     .timeline-item:nth-child(even)::after { left: 10px; } /* 右側も左に揃える */
+}
+
+/* ===============================================
+   タブレット用の表示調整 (769px 〜 1024px)
+   =============================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* --- 背景設定を追加 --- */
+    html {
+        /* PC用の背景をリセット */
+        background-image: none;
+    }
+
+    body {
+        /* タブレット用の背景（スマホ用と同じもの）を設定 */
+        background-image: url('../images/background-mobile.jpg');
+        background-color: #495060;
+        background-attachment: scroll;
+        background-size: 100% auto;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+
+    /* --- 全体的な文字サイズや余白を調整 --- */
+    .content-section {
+        padding: 60px 20px; /* PC版(80px)より少し余白を狭くする */
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    #team-hero h1,
+    #dev-hero h1 {
+        font-size: 3.2rem; /* PC(4rem)とスマホ(2.5rem)の中間に調整 */
+    }
+
+    /* --- メディアセクション --- */
+    .thumbnail-grid {
+        /* PCでは5列だが、タブレットでは少し窮屈なため4列に変更 */
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* --- チーム紹介ページ --- */
+    .team-story-container,
+    .team-member,
+    .team-member.reverse {
+        /* 画像とテキストを縦に並べる（スマホ版と同じレイアウト） */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team-member-bio {
+        text-align: center;
+    }
+
 }
 
 /* ===============================================
