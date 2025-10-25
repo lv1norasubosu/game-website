@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="preload" as="image" href="images/main-visual.jpg">
 <link rel="preload" as="image" href="images/background-mobile.jpg">
 
@@ -59,80 +59,28 @@
 
   <!-- Structured Data (optional but SEO-effective) -->
   <script type="application/ld+json">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "トモヒガラ",
-  "url": "https://tomohigara.com/",
-  "image": "https://tomohigara.com/images/main-visual.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "Tomohigara Studio"
-  },
-  "genre": ["脱出ゲーム", "パズル", "アドベンチャー"],
-  "description": "記憶喪失の少女となって奇妙な建物からの脱出を目指す、ストーリー重視の高難易度ドット絵脱出ゲーム。",
-  "gamePlatform": "PC",
-  "operatingSystem": "Windows 10, Windows 11",
-  "applicationCategory": "Game",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Tomohigara Studio"
-  }
-}
-</script>
-</script>
-
-</head>
-<script>
-  // ▼▼▼ この一行を追加 ▼▼▼
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    // HTML要素を取得
-    const pasteArea = document.getElementById('paste-area');
-    const fileInput = document.getElementById('screenshot-input');
-
-    // pasteAreaとfileInputが両方見つかった場合のみ、処理を続ける
-    if (pasteArea && fileInput) {
-      // paste-areaで「paste」イベントが発生したら実行
-      pasteArea.addEventListener('paste', function(e) {
-        // クリップボードのデータを取得
-        const items = e.clipboardData.items;
-
-        // 画像ファイルを探す
-        for (let i = 0; i < items.length; i++) {
-          if (items[i].type.indexOf('image') !== -1) {
-            
-            // 画像データをファイルオブジェクトとして取得
-            const blob = items[i].getAsFile();
-            
-            // 取得したファイルを、隠された<input type="file">にセットする
-            const dataTransfer = new DataTransfer();
-            dataTransfer.items.add(blob);
-            fileInput.files = dataTransfer.files;
-
-            // プレビューを表示
-            const reader = new FileReader();
-            reader.onload = function(event) {
-              // 既存のテキストを消去
-              pasteArea.innerHTML = '';
-              // プレビュー画像を作成して追加
-              const img = document.createElement('img');
-              img.src = event.target.result;
-              img.className = 'pasted-image-preview';
-              pasteArea.appendChild(img);
-            };
-            reader.readAsDataURL(blob);
-
-            // 処理が終わったらループを抜ける
-            break;
-          }
-        }
-      });
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "トモヒガラ",
+      "url": "https://tomohigara.com/",
+      "image": "https://tomohigara.com/images/main-visual.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Tomohigara Studio"
+      },
+      "genre": ["脱出ゲーム", "パズル", "アドベンチャー"],
+      "description": "記憶喪失の少女となって奇妙な建物からの脱出を目指す、ストーリー重視の高難易度ドット絵脱出ゲーム。",
+      "gamePlatform": "PC",
+      "operatingSystem": "Windows 10, Windows 11",
+      "applicationCategory": "Game",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tomohigara Studio"
+      }
     }
-  // ▼▼▼ この一行を追加 ▼▼▼
-  });
-</script>
+  </script>
+</head>
   <body>
     <header>
       <h1>ドット絵脱出ゲーム「トモヒガラ」公式サイト</h1>
@@ -146,10 +94,10 @@
           <a href="#characters">登場人物</a>
           <a href="#specs">動作環境</a>
           <a href="team.html" class="page-link">チーム</a>
-          <a 
-            href="https://tomohigara-official-site.netlify.app/bug-report" 
-            class="page-link" 
-            target="_blank" 
+          <a
+            href="https://tomohigara-official-site.netlify.app/bug-report"
+            class="page-link"
+            target="_blank"
             rel="noopener noreferrer"
           >
             不具合報告
@@ -301,55 +249,53 @@
           <li><strong>メモリ:</strong> 8 GB RAM</li>
         </ul>
       </section>
-    </main>
 
- 
-</section>
-<section id="contact">
-      <h2>CONTACT</h2>
-      <p>
-        このウェブサイトのデザインや機能に関するご意見・ご感想、お問い合わせはこちらのフォームからお願いします。
-      </p>
-      <p style="font-weight: bold; color: #fff; background: rgba(200, 0, 0, 0.2); padding: 10px; border-radius: 8px;">
-        ※ ゲーム本編の不具合に関するご報告は、
-        <a href="https://tomohigara-official-site.netlify.app/bug-report" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">
-          こちらの専用フォーム
-        </a>
-        よりお願いいたします。
-      </p>
-      
-      <form name="site-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="site-feedback" />
-        <p class="hidden">
-          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+      <section id="contact">
+        <h2>CONTACT</h2>
+        <p>
+          このウェブサイトのデザインや機能に関するご意見・ご感想、お問い合わせはこちらのフォームからお願いします。
         </p>
+        <p style="font-weight: bold; color: #fff; background: rgba(200, 0, 0, 0.2); padding: 10px; border-radius: 8px;">
+          ※ ゲーム本編の不具合に関するご報告は、
+          <a href="https://tomohigara-official-site.netlify.app/bug-report" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">
+            こちらの専用フォーム
+          </a>
+          よりお願いいたします。
+        </p>
+        
+        <form name="site-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="site-feedback" />
+          <p class="hidden">
+            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+          </p>
 
-        <div class="form-group">
-          <label for="name">お名前 (任意)</label>
-          <input type="text" id="name" name="name" />
-        </div>
-        <div class="form-group">
-          <label for="email">メールアドレス (任意)</label>
-          <input type="email" id="email" name="email" />
-        </div>
-        <div class="form-group">
-          <label for="message">ご意見・ご感想</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
+          <div class="form-group">
+            <label for="name">お名前 (任意)</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス (任意)</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="message">ご意見・ご感想</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
 
-<div class="form-group">
-  <label for="screenshot">スクリーンショット (任意)</label>
-  <input type="file" id="screenshot-input" name="screenshot" accept="image/png, image/jpeg, image/gif" style="display: none;">
-  <div id="paste-area" class="paste-area">
-    ここに画像をペーストできます (Ctrl+V)
-  </div>
-</div>
+          <div class="form-group">
+            <label for="screenshot">スクリーンショット (任意)</label>
+            <input type="file" id="screenshot-input" name="screenshot" accept="image/png, image/jpeg, image/gif" style="display: none;">
+            <div id="paste-area" class="paste-area">
+              ここに画像をペーストできます (Ctrl+V)
+            </div>
+          </div>
 
-        <div class="form-group">
-          <button type="submit" class="cta-button">送信する</button>
-        </div>
-      </form>
-    </section>
+          <div class="form-group">
+            <button type="submit" class="cta-button">送信する</button>
+          </div>
+        </form>
+      </section>
+    </main>
 
     <footer>
       <p>© 2025 Tomohigara Studio</p>
@@ -359,5 +305,48 @@
 
 
     <script src="js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        // HTML要素を取得
+        const pasteArea = document.getElementById('paste-area');
+        const fileInput = document.getElementById('screenshot-input');
+
+        // pasteAreaとfileInputが両方見つかった場合のみ、処理を続ける
+        if (pasteArea && fileInput) {
+          // paste-areaで「paste」イベントが発生したら実行
+          pasteArea.addEventListener('paste', function(e) {
+            // クリップボードのデータを取得
+            const items = e.clipboardData.items;
+
+            // 画像ファイルを探す
+            for (let i = 0; i < items.length; i++) {
+              if (items[i].type.indexOf('image') !== -1) {
+                
+                // 画像データをファイルオブジェクトとして取得
+                const blob = items[i].getAsFile();
+                
+                // 取得したファイルを、隠された<input type="file">にセットする
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(blob);
+                fileInput.files = dataTransfer.files;
+
+                // プレビューを表示
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                  pasteArea.innerHTML = ''; // 既存のテキストを消去
+                  const img = document.createElement('img');
+                  img.src = event.target.result;
+                  img.className = 'pasted-image-preview';
+                  pasteArea.appendChild(img);
+                };
+                reader.readAsDataURL(blob);
+                break; // 処理が終わったらループを抜ける
+              }
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
