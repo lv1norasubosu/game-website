@@ -1202,3 +1202,196 @@ footer {
   border-radius: 4px;
   object-fit: contain;
 }
+
+.cta-demo-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+.cta-demo-link a {
+  position: relative;
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta-demo-link a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #00aaff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.cta-demo-link a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* カード本体：2カラム（左=見出し, 右=本文） */
+.news-container{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;                  /* ← ここで左右の間隔を管理 */
+  align-items: start;
+  max-width: 700px;
+  margin: 30px auto 0;
+  padding: 18px 20px;
+  background: rgba(18,18,18,.85);
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.3);
+  backdrop-filter: blur(5px);
+}
+
+/* 左列：見出しは細い仕切りだけでOK（余白を削る） */
+.news-header{
+  margin: 0;
+  padding-right: 12px;               /* ← 小さめに */
+  border-right: 1px solid rgba(255,255,255,.08);
+  line-height: 1;
+}
+
+/* 右列上部：並び順UIを見出しの右横に */
+.news-controls{
+  grid-column: 2;
+  margin: 0 0 10px 0;                /* ← 左余白を消す */
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.news-controls label{ color:#cfd3d7; opacity:.85; }
+.news-controls select{
+  background: rgba(255,255,255,.08);
+  color: #e8eaed;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: .9rem;
+  appearance: none; -webkit-appearance:none; -moz-appearance:none;
+}
+.news-controls select option{ background:#fff; color:#000; }
+
+/* 右列下部：ニュースリスト（左パディングを削る） */
+.news-list{
+  grid-column: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;                         /* ★ ここを 0 にするのがポイント */
+  max-height: 260px;                  /* 約6件分 */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.2) transparent;
+}
+.news-list::-webkit-scrollbar{ width:6px; }
+.news-list::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.2);
+  border-radius: 6px;
+}
+
+/* 行のレイアウトも少しだけ詰める */
+.news-item{
+  display: grid;
+  grid-template-columns: 9ch 1fr;     /* 日付幅を固定して整列 */
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.news-item:first-child{ border-top: none; }
+
+.news-date{
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: .92rem; font-weight:700;
+  color:#bfe6ff;
+  background: rgba(0,170,255,.14);
+  border:1px solid rgba(0,170,255,.28);
+  text-align:center;
+}
+
+.news-title{
+  color:#e8eaed; text-decoration:none; font-weight:600;
+  transition: color .2s ease;
+}
+.news-title:hover{ color:#cfeeff; text-decoration:underline; }
+
+
+/* --- スマホ表示 (768px以下) --- */
+@media (max-width: 768px) {
+    .news-container {
+        flex-direction: column;
+        padding: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .news-header {
+        padding-right: 0;
+        padding-bottom: 10px;
+        border-right: none;
+        border-bottom: 2px solid #555; /* サイト共通の区切り線色 */
+        margin-bottom: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .news-list {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .news-item {
+        flex-direction: column; 
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .news-date {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* NEWS本体はこれまでのを流用でOK。以下は追記だけ */
+
+.news-container { position: relative; }
+
+.news-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding-left: 16px;
+  color: #cfd3d7;
+  font-size: .9rem;
+}
+.news-controls label { opacity: .8; }
+.news-controls select {
+  background: rgba(255,255,255,.06);
+  color: #e8eaed;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+/* NEWSリスト：6件分の高さで内部スクロール */
+.news-list{
+  /* 既存 + これ重要 */
+  max-height: 260px;   /* 行高に合わせて微調整。約6行 */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.2) transparent;
+}
+.news-list::-webkit-scrollbar{ width:6px; }
+.news-list::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.2);
+  border-radius: 6px;
+}

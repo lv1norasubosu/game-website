@@ -106,7 +106,7 @@
       </nav>
     </header>
 
-    <section id="hero">
+   <section id="hero">
       <div class="hero-content">
         <p>
           1手の重みが、あなたを閉じ込める<br />一つ一つの順序や取捨選択が大きな影響を持つ、高難易度脱出ゲーム
@@ -117,10 +117,91 @@
               <i class="fab fa-steam"></i> 本編をウィッシュリストに追加
           </a>
         </div>
-        <p class="cta-note">発売日に通知が届きます！</p>
-      </div>
-    </section>
+<p class="cta-note">発売日に通知が届きます！</p>
+        <p class="cta-demo-link">
+          <a href="★体験版のURLをここに入力★" target="_blank" rel="noopener noreferrer">
+            <strong>体験版発売中</strong>
+          </a>
+        </p>
 
+       <div class="news-container">
+  <h3 class="news-header">NEWS</h3>
+
+  <!-- 並び順コントロール -->
+  <div class="news-controls" aria-label="ニュースの並び順">
+    <label for="newsOrder">並び順</label>
+    <select id="newsOrder">
+      <option value="desc">新しい順</option>
+      <option value="asc">古い順</option>
+    </select>
+  </div>
+
+  <ul class="news-list">
+    <li class="news-item">
+      <span class="news-date" data-date="2025-10-25">2025.10.25</span>
+      <a href="★ニュース1のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+        体験版の配信を開始しました！
+      </a>
+    </li>
+
+    <li class="news-item">
+      <span class="news-date" data-date="2025-10-20">2025.10.20</span>
+      <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+        公式サイトをリニューアルしました。
+      </a>
+    </li>
+              <li class="news-item">
+              <span class="news-date">2025.10.20</span>
+              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+                公式サイトをリニューアルしました。
+              </a>
+            </li>
+
+              <li class="news-item">
+              <span class="news-date">2025.10.20</span>
+              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+                公式サイトをリニューアルしました。
+              </a>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">2025.10.20</span>
+              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+                公式サイトをリニューアルしました。
+              </a>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">2025.10.20</span>
+              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+                公式サイトをリニューアルしました。
+              </a>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">2025.10.20</span>
+              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+                公式サイトをリニューアルしました。
+              </a>
+            </li>
+
+            <li class="news-item">
+              <span class="news-date">2025.10.20</span>
+              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
+                公式サイトをリニューアルしました。
+              </a>
+            </li>
+
+
+
+
+            
+            
+          </ul>
+        </div>
+        
+
+      </div> </section>
     <main>
       <section id="about" class="content-section">
         <h2>このゲームについて</h2>
@@ -348,5 +429,59 @@
         }
       });
     </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const newsList    = document.querySelector('.news-list');
+  const orderSelect = document.getElementById('newsOrder');
+  if (!newsList) return;
+
+  // .news-date から Date を取る（data-date 推奨）
+  const getDateFromItem = (li) => {
+    const el = li.querySelector('.news-date');
+    if (!el) return new Date(0);
+    const iso = el.getAttribute('data-date');
+    if (iso) {
+      const d = new Date(iso);
+      return isNaN(d) ? new Date(0) : d;
+    }
+    const txt  = (el.textContent || '').trim();
+    const norm = txt.replace(/[./]/g, '-'); // 2025-10-25 形式に
+    const d = new Date(norm);
+    return isNaN(d) ? new Date(0) : d;
+  };
+
+  // 並び替え
+  const sortNews = (order = 'desc') => {
+    const items = Array.from(newsList.querySelectorAll('.news-item'));
+    if (items.length === 0) return;
+
+    items.sort((a, b) => {
+      const da = getDateFromItem(a).getTime();
+      const db = getDateFromItem(b).getTime();
+      return order === 'asc' ? (da - db) : (db - da);
+    });
+
+    // 一括置換（高速・安全）
+    newsList.replaceChildren(...items);
+
+    // 先頭が見えるように
+    newsList.scrollTop = 0;
+
+    try { localStorage.setItem('newsOrder', order); } catch(e) {}
+  };
+
+  // 初期化
+  const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('newsOrder')) || 'desc';
+  if (orderSelect) orderSelect.value = saved;
+  sortNews(saved);
+
+  // セレクト変更
+  if (orderSelect) {
+    orderSelect.addEventListener('change', (e) => sortNews(e.target.value));
+  }
+});
+</script>
+
   </body>
 </html>
