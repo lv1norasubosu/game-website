@@ -10,9 +10,8 @@
 <link rel="preload" as="image" href="images/character2.png">
 
   <title>トモヒガラ 公式サイト</title>
-  <meta name="keywords" content="トモヒガラ, 脱出ゲーム, ドット絵, 記憶を失った少女, 高難易度, インディーゲーム, ホラー, ノベル, pixel art" />
-  <meta name="author" content="Tomohigara" />
-  <link rel="canonical" href="https://tomohigara.com/" />
+  <meta name="description" content="トモヒガラ（ともひがら）は、主人公イーリャとアシスタントのモップが奇妙な施設からの脱出を目指す高難易度アドベンチャー。Steamで体験版配信中。キャラ紹介・最新ニュース・トレーラーはこちら。">
+ <meta name="keywords" content="トモヒガラ,ともひがら,イーリャ,モップ, 脱出ゲーム, ドット絵, 高難易度, インディーゲーム, ホラー, アドベンチャー, Steam">
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content>
 
@@ -56,30 +55,28 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "トモヒガラ",
+  "alternateName": ["ともひがら", "TOMOHIGARA"],
+  "url": "https://tomohigara.com/",
+  "inLanguage": "ja",
+  "image": "https://tomohigara.com/images/main-visual.jpg",
+  "genre": ["脱出ゲーム", "パズル", "アドベンチャー"],
+  "description": "トモヒガラ（ともひがら）は、主人公イーリャとモップが協力して奇妙な建物からの脱出を目指す高難易度アドベンチャー。",
+  "author": { "@type": "Organization", "name": "Tomohigara Studio" },
+  "publisher": { "@type": "Organization", "name": "Tomohigara Studio" },
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "Game",
+  "character": [
+    { "@type": "Person", "name": "イーリャ" },
+    { "@type": "Person", "name": "モップ" }
+  ]
+}
+</script>
 
-  <!-- Structured Data (optional but SEO-effective) -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoGame",
-      "name": "トモヒガラ",
-      "url": "https://tomohigara.com/",
-      "image": "https://tomohigara.com/images/main-visual.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "Tomohigara Studio"
-      },
-      "genre": ["脱出ゲーム", "パズル", "アドベンチャー"],
-      "description": "記憶喪失の少女となって奇妙な建物からの脱出を目指す、ストーリー重視の高難易度ドット絵脱出ゲーム。",
-      "gamePlatform": "PC",
-      "operatingSystem": "Windows 10, Windows 11",
-      "applicationCategory": "Game",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Tomohigara Studio"
-      }
-    }
-  </script>
 </head>
   <body>
     <header>
@@ -106,102 +103,81 @@
       </nav>
     </header>
 
-   <section id="hero">
-      <div class="hero-content">
-        <p>
-          1手の重みが、あなたを閉じ込める<br />一つ一つの順序や取捨選択が大きな影響を持つ、高難易度脱出ゲーム
-        </p>
-        <div class="steam-buttons">
-          
-          <a href="https://store.steampowered.com/app/4055020/_/" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
-              <i class="fab fa-steam"></i> 本編をウィッシュリストに追加
-          </a>
-        </div>
-<p class="cta-note">発売日に通知が届きます！</p>
-        <p class="cta-demo-link">
-          <a href="★体験版のURLをここに入力★" target="_blank" rel="noopener noreferrer">
-            <strong>体験版発売中</strong>
-          </a>
-        </p>
-
-       <div class="news-container">
-  <h3 class="news-header">NEWS</h3>
-
-  <!-- 並び順コントロール -->
-  <div class="news-controls" aria-label="ニュースの並び順">
-    <label for="newsOrder">並び順</label>
-    <select id="newsOrder">
-      <option value="desc">新しい順</option>
-      <option value="asc">古い順</option>
-    </select>
+  <!-- ヒーローセクション -->
+<section id="hero">
+  <div class="hero-content">
+    <p>
+      1手の重みが、あなたを閉じ込める<br>
+      一つ一つの順序や取捨選択が大きな影響を持つ、高難易度脱出ゲーム
+    </p>
+    <div class="steam-buttons">
+      <a href="https://store.steampowered.com/app/4055020/_/" 
+         target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+        <i class="fab fa-steam"></i> 本編をウィッシュリストに追加
+      </a>
+    </div>
+    <p class="cta-note">発売日に通知が届きます！</p>
+    <p class="cta-demo-link">
+      <a href="https://store.steampowered.com/app/4055020/_/" target="_blank" rel="noopener noreferrer">
+        <strong>体験版発売中</strong>
+      </a>
+    </p>
   </div>
+</section>
+
+<!-- NEWSセクション（heroの下に配置） -->
+<section id="news-section">
+  <div class="news-container">
+    <h3 class="news-header">NEWS</h3>
+
+    <div class="news-controls" aria-label="ニュースの並び順">
+      <label for="newsOrder">並び順</label>
+      <select id="newsOrder">
+        <option value="desc">新しい順</option>
+        <option value="asc">古い順</option>
+      </select>
+    </div>
 
   <ul class="news-list">
-    <li class="news-item">
-      <span class="news-date" data-date="2025-10-25">2025.10.25</span>
-      <a href="★ニュース1のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-        体験版の配信を開始しました！
-      </a>
-    </li>
+  <li class="news-item">
+    <span class="news-date" data-date="2025-10-21">2025.10.21</span>
+    <a href="https://store.steampowered.com/app/4055020/_/" class="news-title" target="_blank" rel="noopener noreferrer">
+      体験版 ver1.0 を配信
+    </a>
+  </li>
 
-    <li class="news-item">
-      <span class="news-date" data-date="2025-10-20">2025.10.20</span>
-      <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-        公式サイトをリニューアルしました。
-      </a>
-    </li>
-              <li class="news-item">
-              <span class="news-date">2025.10.20</span>
-              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-                公式サイトをリニューアルしました。
-              </a>
-            </li>
+  <li class="news-item">
+    <span class="news-date" data-date="2025-10-21">2025.10.21</span>
+    <a href="https://www.4gamer.net/games/955/G095551/20251021049/" class="news-title" target="_blank" rel="noopener noreferrer">
+      4Gamer様の記事に掲載
+    </a>
+  </li>
 
-              <li class="news-item">
-              <span class="news-date">2025.10.20</span>
-              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-                公式サイトをリニューアルしました。
-              </a>
-            </li>
+  <li class="news-item">
+    <span class="news-date" data-date="2025-10-08">2025.10.08</span>
+    <a href="https://automaton-media.com/articles/newsjp/tomohigara-20251008-360912/" class="news-title" target="_blank" rel="noopener noreferrer">
+      AUTOMATON様の記事に掲載
+    </a>
+  </li>
 
-            <li class="news-item">
-              <span class="news-date">2025.10.20</span>
-              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-                公式サイトをリニューアルしました。
-              </a>
-            </li>
+  <li class="news-item">
+    <span class="news-date" data-date="2025-10-06">2025.10.06</span>
+    <a href="https://store.steampowered.com/app/4055020/_/" class="news-title" target="_blank" rel="noopener noreferrer">
+      ストアページ公開
+    </a>
+  </li>
 
-            <li class="news-item">
-              <span class="news-date">2025.10.20</span>
-              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-                公式サイトをリニューアルしました。
-              </a>
-            </li>
+  <li class="news-item">
+    <span class="news-date" data-date="2025-09-23">2025.09.23</span>
+    <a href="https://youtu.be/xYiSZO9I0Ng?si=4xhRGrEvI-gnDfOq" class="news-title" target="_blank" rel="noopener noreferrer">
+      ファーストトレーラー公開
+    </a>
+  </li>
+</ul>
 
-            <li class="news-item">
-              <span class="news-date">2025.10.20</span>
-              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-                公式サイトをリニューアルしました。
-              </a>
-            </li>
+  </div>
+</section>
 
-            <li class="news-item">
-              <span class="news-date">2025.10.20</span>
-              <a href="★ニュース2のURL★" class="news-title" target="_blank" rel="noopener noreferrer">
-                公式サイトをリニューアルしました。
-              </a>
-            </li>
-
-
-
-
-            
-            
-          </ul>
-        </div>
-        
-
-      </div> </section>
     <main>
       <section id="about" class="content-section">
         <h2>このゲームについて</h2>
@@ -307,14 +283,14 @@
         <h2>登場人物</h2>
         <div class="character-grid">
           <div class="character-card">
-            <img loading="lazy" src="images/character1.png" alt="イーリャの画像" />
+            <img loading="lazy" src="images/character1.png" alt="イーリャ（トモヒガラの主人公）の画像" />
             <h3>イーリャ</h3>
             <p>
               見知らぬ建物で目覚めた記憶喪失の少女。<br />黒い鍵を見つけて脱出を目指す。
             </p>
           </div>
           <div class="character-card">
-            <img loading="lazy" src="images/character2.png" alt="モップの画像" />
+            <img loading="lazy" src="images/character2.png" alt="モップ（イーリャのアシスタント）の画像" />
             <h3>モップ</h3>
             <p>
               イーリャをサポートするロボット。<br />この建物について何か知っているようだが………

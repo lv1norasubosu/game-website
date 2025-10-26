@@ -1296,25 +1296,34 @@ footer {
 }
 
 /* 行のレイアウトも少しだけ詰める */
+/* 行のレイアウト：日付カラムを内容サイズに合わせて可変に */
 .news-item{
   display: grid;
-  grid-template-columns: 9ch 1fr;     /* 日付幅を固定して整列 */
+  grid-template-columns: max-content 1fr;  /* ← ここがポイント */
   align-items: center;
-  gap: 12px;
-  padding: 8px 0;
+  gap: 14px;
+  padding: 10px 0;
   border-top: 1px solid rgba(255,255,255,.06);
 }
 .news-item:first-child{ border-top: none; }
 
+/* 日付バッジ：上下左右に余白を増やし、中央揃えに */
 .news-date{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;               /* 折り返し防止 */
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  font-weight: 700;
   line-height: 1;
-  padding: 6px 8px;
-  border-radius: 8px;
-  font-size: .92rem; font-weight:700;
-  color:#bfe6ff;
-  background: rgba(0,170,255,.14);
-  border:1px solid rgba(0,170,255,.28);
-  text-align:center;
+
+  padding: 6px 14px;                 /* ← 余白をしっかり確保（以前より広め） */
+  border-radius: 9999px;             /* ピル形でゆったり見せる */
+  background: rgba(0,170,255,.18);
+  border: 1px solid rgba(0,170,255,.35);
+  color: #bfe6ff;
+  box-sizing: border-box;
 }
 
 .news-title{
@@ -1326,39 +1335,64 @@ footer {
 
 /* --- スマホ表示 (768px以下) --- */
 @media (max-width: 768px) {
-    .news-container {
-        flex-direction: column;
-        padding: 15px;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
+  /* 全体を縦並びに */
+  .news-container {
+    display: flex;              /* grid → flex に切り替え */
+    flex-direction: column;     /* 縦方向 */
+    padding: 15px;
+    margin: 0 15px;
+  }
 
-    .news-header {
-        padding-right: 0;
-        padding-bottom: 10px;
-        border-right: none;
-        border-bottom: 2px solid #555; /* サイト共通の区切り線色 */
-        margin-bottom: 15px;
-        width: 100%;
-        text-align: center;
-    }
+  /* 見出し（NEWS）を中央寄せに */
+  .news-header {
+    padding: 0;
+    margin: 0 0 10px 0;
+    border: none;
+    border-bottom: 2px solid #555;
+    text-align: center;
+    width: 100%;
+  }
 
-    .news-list {
-        padding-left: 0;
-        width: 100%;
-    }
+  /* 並び順セレクトは見出しの下に配置 */
+  .news-controls {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
 
-    .news-item {
-        flex-direction: column; 
-        align-items: flex-start;
-        margin-bottom: 15px;
-    }
+  /* リストを全幅に */
+  .news-list {
+    width: 100%;
+    padding: 0;
+    max-height: 260px;
+  }
 
-    .news-date {
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
+  /* 各ニュースを縦積み表示に */
+  .news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 8px;
+  }
+
+  .news-item:first-child {
+    border-top: none;
+  }
+
+  /* 日付は上に、タイトルは下に */
+  .news-date {
+    margin: 0 0 4px 0;
+  }
+
+  /* タイトルを全幅にして読みやすく */
+  .news-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
 }
+
 
 /* NEWS本体はこれまでのを流用でOK。以下は追記だけ */
 
@@ -1394,4 +1428,34 @@ footer {
 .news-list::-webkit-scrollbar-thumb{
   background: rgba(255,255,255,.2);
   border-radius: 6px;
+}
+
+
+/* ヒーローセクションを1画面分に固定 */
+#hero {
+  height: 100vh; /* 画面の高さ分まるごと確保 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* NEWSセクションを次の画面として配置 */
+#news-section {
+  background: transparent; /* 背景を透かして背景画像を見せる */
+  padding-top: 60px;       /* 上部に少し余白 */
+  padding-bottom: 100px;
+}
+
+/* スクロール時に自然に繋がるように軽く影を追加してもOK */
+#news-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0));
 }
